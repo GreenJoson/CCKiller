@@ -17,14 +17,14 @@ conf_env()
 check_env()
 {
     #wget -V || yum install -y wget
-    which sendmail || yum install -y sendmail
-    mailx -V || yum install -y mailx
+    which sendmail || apt-get install -y sendmail
+    mailx -V || apt-get install -y mailx
     test -x $0 || chmod +x $0
     #Centos 7 install iptables
     if [ -n "`grep 'Aliyun Linux release' /etc/issue`" -o -e /etc/redhat-release ];then
         which iptables >/dev/null
         if [ -n "`grep ' 7\.' /etc/redhat-release`" -a $? -eq 0 ] ; then
-            yum -y install iptables-services
+            apt-get -y install iptables-services
             systemctl mask firewalld.service
             systemctl enable iptables.service
         fi
