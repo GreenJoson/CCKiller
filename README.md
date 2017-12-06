@@ -1,9 +1,14 @@
 # CCkiller
 Linux attack defense scripts tool --- Linux CC攻击防御工具脚本
 
+ps:ubuntu版本稍微有点区别，我将install.sh中yum改成apt-get，
+代码对于标准bash而言没有错，因为Ubuntu/Debian为了加快开机速度，用dash代替了传统的bash，是dash在捣鬼，解决方法就是取消dash，在安装前 运行：
+sudo dpkg-reconfigure dash
+选择no。
+
+
 1. 请执行如下命令在线安装：
 wget --no-check-certificate -O install.sh https://zhangge.net/wp-content/uploads/files/cckiller/install.sh?ver=1.0.1 && chmod +x install.sh && ./install.sh -i
-
 
 2015-09-23 Ver 1.0.1：
 
